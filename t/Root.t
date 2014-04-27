@@ -104,7 +104,7 @@ ok( request(POST ( 'http://localhost/login', [ username => 'admin',
     'POST /login incorrect password param content');
 
 # login - login request correct parameters
-ok( request(POST ( 'http://localhost/login', [ username => 'admin',
+ok( request(POST ( 'http://localhost/login', [ username => 'test_user_01',
                                                password => 'Hfa *-£(&&%HBbWqpV%"_=asd' ] ))->is_redirect,
     'POST login redirects');
 

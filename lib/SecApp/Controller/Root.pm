@@ -39,10 +39,7 @@ sub default :Path {
 sub index :Path :Args(0) { }
 
 # the login function
-sub login :Chained('/') PathPart('login') CaptureArgs(0) {
-    my ($self, $c) = @_;
-    $c->stash(template => 'login.tt');
-}
+sub login :Chained('/') PathPart('login') CaptureArgs(0) {}
 
 sub login_auth :Chained('login') PathPart('') Args(0) POST {
     my ($self, $c) = @_;
@@ -80,6 +77,9 @@ sub login_auth :Chained('login') PathPart('') Args(0) POST {
 
 sub login_form :Chained('login') PathPart('') Args(0) GET {
     my ($self, $c) = @_;
+
+    # load the login template
+    $c->stash(template => 'login.tt');
 
     # only load captcha if enabled in config
     if ($c->config->{Captcha}->{enabled} == 1) {

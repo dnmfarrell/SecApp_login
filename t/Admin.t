@@ -8,7 +8,7 @@ use LWP::Protocol::https;
 ok(my $mech = Test::WWW::Mechanize::Catalyst->new, 'Create new browser');
 
 # login referral to /landing
-ok($mech->post( 'https://localhost/login', [ username => 'admin',
+ok($mech->post( 'https://localhost/login', [ username => 'test_user_01',
                                              password => 'Hfa *-£(&&%HBbWqpV%"_=asd' ] ), 'login');
 ok($mech->success, 'Referred to /landing success');
 ok($mech->content =~ /<p>Welcome to the secure admin page \(<a href="https:\/\/localhost\/logout">logout<\/a>\)<\/p>/,
