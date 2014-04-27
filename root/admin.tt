@@ -1,0 +1,2 @@
+<p>Welcome to the secure admin page (<a href="[% c.uri_for('logout')  %]">logout</a>)</p>
+
