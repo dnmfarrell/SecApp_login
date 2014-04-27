@@ -19,13 +19,13 @@ __PACKAGE__->config(
     name => 'SecApp',
     disable_component_resolution_regex_fallback => 1,
 
-    # Set a wrapper template
     'View::HTML' => {
-        #Set the location for TT files
+        # Set the location for TT files
         INCLUDE_PATH => [
             __PACKAGE__->path_to( 'root', 'templates' ),
         ],
-         WRAPPER => 'wrapper.tt',
+        # Add a wrapperr template
+        WRAPPER => 'wrapper.tt',
     },
 
     # Disable X-Catalyst header
