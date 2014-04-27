@@ -36,10 +36,7 @@ sub default :Path {
 }
 
 # this is splash page
-sub index :Path :Args(0) {
-    my ( $self, $c ) = @_;
-    $c->response->body("Welcome to SecApp!");
-}
+sub index :Path :Args(0) { }
 
 # the login function
 sub login :Chained('/') PathPart('login') CaptureArgs(0) {
