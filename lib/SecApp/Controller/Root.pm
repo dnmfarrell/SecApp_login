@@ -97,7 +97,7 @@ sub end : ActionClass('RenderView') {
 
     $c->response->header(
             'X-Frame-Options'           => 'DENY',
-            'Content-Security-Policy'   => "default-src 'self' https://www.google.com 'unsafe-eval' 'unsafe-inline'",
+            'Content-Security-Policy'   => "default-src 'self' http://www.google.com https://www.google.com 'unsafe-eval' 'unsafe-inline'",
             'X-Content-Type-Options'    => 'nosniff',
             'X-Download-Options'        => 'noopen',
             'X-XSS-Protection'          => "1; 'mode=block'",
@@ -106,4 +106,3 @@ sub end : ActionClass('RenderView') {
 
 __PACKAGE__->meta->make_immutable;
 1;
-
