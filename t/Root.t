@@ -99,7 +99,7 @@ ok( request(POST ( 'http://localhost/login', [ username => '',
 ok( request(POST ( 'http://localhost/login', [ username => 'playerone',
                                                password => 'Hfa *-£(&&%HBbWqpV%"_=asd' ] ))->decoded_content =~ /$login_content_bad_username_password/,
     'POST /login incorrect username param content');
-ok( request(POST ( 'http://localhost/login', [ username => 'admin',
+ok( request(POST ( 'http://localhost/login', [ username => 'test_user_01',
                                                password => 'default' ] ))->decoded_content =~ /$login_content_bad_username_password/,
     'POST /login incorrect password param content');
 
